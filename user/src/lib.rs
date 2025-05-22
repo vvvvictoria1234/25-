@@ -9,6 +9,7 @@ mod lang_items;
 // 从 syscall 模块导入函数并重新导出
 pub use syscall::sys_write as write;
 pub use syscall::sys_exit as exit;
+use crate::syscall::sys_yield;
 
 fn clear_bss() {
     extern "C" {
@@ -33,4 +34,5 @@ pub extern "C" fn _start() -> ! {
 fn main() -> i32 {
     panic!("Cannot find main!");
 }
+pub fn yield_() -> isize { sys_yield() }
 
