@@ -1,9 +1,9 @@
+use super::write;
 use core::fmt::{self, Write};
-use crate::write;
-
-const STDOUT: usize = 1;
 
 struct Stdout;
+
+const STDOUT: usize = 1;
 
 impl Write for Stdout {
     fn write_str(&mut self, s: &str) -> fmt::Result {
